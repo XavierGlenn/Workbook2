@@ -2,32 +2,38 @@ package org.pluralsight;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 public class HSHighScore {
-    public void main() {
-        Scanner reader = new Scanner(System.in);
 
-//Declare variables
-        int Home = 21;
-        int Visitor = 9;
+    static Scanner reader = new Scanner(System.in);
 
-//Inputs
-        System.out.println("Please enter Home end score: ");
-        String scoreForHome = reader.nextLine();
+    public static void main(String[] args) {
 
-        System.out.println("Please enter Visitor end score: ");
-        String scoreForVisitor = reader.nextLine();
+        //Declaring Variables
 
-// Calculation (Algoritme)
-//   Split the code using the Pipe (Pattern)
-        String[] scoreForHomeSplit = scoreForHome.split(Pattern.quote("|"));
-        String[] scoreForVisitorSplit = scoreForHome.split(Pattern.quote("|"));
+        // Gathering inputs
+        System.out.print("Please enter a score:");
+        String scoreForGame = reader.nextLine(); //Home and visitor score
 
-//   Split the code using the Pipe (Pattern)
-        System.out.println(scoreForVisitorSplit[0]);
-        System.out.println(scoreForVisitorSplit[1]);
-        System.out.println(scoreForHomeSplit[0]);
-        System.out.println(scoreForHomeSplit[1]);
+        // Calculation (Algoritme)
+        //   Split the code using the Pipe (Pattern)
+        String[] scoreSplitOnPipe = scoreForGame.split(Pattern.quote("|"));
 
-// Output
+        //   Split the code using the Pipe (Pattern)
+        System.out.println(scoreSplitOnPipe[0]); // "Home:Visitor"
+        System.out.println(scoreSplitOnPipe[1]); // "21:9"
+
+        //  String[] xx = xx.split(Pattern.quote(":"));
+        String team1 = "Home";
+        String team2 = "Visitor";
+        String teamScore = "21"; //Convert to Integer to calculate
+        String teamScore2 = "9"; //Convert to Integer to calculate
+
+
+        Pattern[] scoreForVisitorSplit = new Pattern[0];
+        String[] homeAndScoreSplit = scoreForVisitorSplit[0].split(Pattern.quote(":"));
+        System.out.println(homeAndScoreSplit[0]); //Home
+        System.out.println(homeAndScoreSplit[1]); //Visitor
+
+        //Output
         String winner = "";
         System.out.println("Winner: " + winner);
     }
